@@ -5,3 +5,35 @@ body {
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  border-top-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  border-top-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
