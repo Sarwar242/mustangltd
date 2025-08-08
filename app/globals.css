@@ -5,3 +5,71 @@ body {
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Slide transition classes */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Transform classes */
+.translate-x-0 {
+  transform: translateX(0);
+}
+
+.translate-x-full {
+  transform: translateX(100%);
+}
+
+.-translate-x-full {
+  transform: translateX(-100%);
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+.translate-y-full {
+  transform: translateY(100%);
+}
+
+.-translate-y-full {
+  transform: translateY(-100%);
+}
