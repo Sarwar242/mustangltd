@@ -12,8 +12,8 @@ export default function Loader({ onComplete }: LoaderProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 500); // Wait for fade out animation
-    }, 2000); // Show loader for 2 seconds
+      setTimeout(onComplete, 100); // Wait for fade out animation
+    }, 1500); // Show loader for 2 seconds
 
     return () => clearTimeout(timer);
   }, [onComplete]);
