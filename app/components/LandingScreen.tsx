@@ -53,7 +53,7 @@ const LoneStarLanding: React.FC = () => {
           <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-gray-400 rounded-full"></div>
         </div>
         
-        <div className="text-center z-10 transform hover:scale-105 transition-transform duration-500">
+        <div className="text-center z-10 transform hover:scale-105 transition-transform duration-3500">
           <div className="flex items-center justify-center mb-8">
             {/* Logo Circle */}
             {/* <div className="relative">
@@ -94,15 +94,15 @@ const LoneStarLanding: React.FC = () => {
           >
             {/* Background Image */}
             <div 
-              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-1700 group-hover:scale-110 z-0"
+              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-10000 group-hover:scale-120 z-0"
               style={{ backgroundImage: `url(${item.bgImage})` }}
             ></div>
             
             {/* Overlay - Much lighter to show background image */}
-            <div className="absolute inset-0 bg-[#1a1b23] opacity-80 group-hover:opacity-60 transition-all duration-1500 z-10"></div>
+            <div className="absolute inset-0 bg-[#1a1b23] opacity-80 group-hover:opacity-60 transition-all duration-3500 z-10"></div>
             
             {/* Gradient Overlay - Lighter for better image visibility */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 group-hover:from-red-900/10 group-hover:to-blue-900/10 transition-all duration-1500 z-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 group-hover:from-red-900/10 group-hover:to-blue-900/10 transition-all duration-4500 z-20"></div>
             
             {/* Content */}
             <div className="absolute inset-0 flex items-center z-30">
@@ -110,16 +110,16 @@ const LoneStarLanding: React.FC = () => {
                 {/* Title and Description Section - Takes 3 columns on the left */}
                 <div className="col-span-2 flex items-center"></div>
                   <div className="col-span-7 flex items-center md:pl-10 md:ml-10">
-                  <div className="text-left transform group-hover:scale-105 transition-all duration-300">
+                  <div className="text-left transform group-hover:scale-105 transition-all duration-2500">
                     <h2 className="text-2xl md:text-2xl font-bold text-white mb-4 tracking-wider group-hover:text-red-400 transition-all duration-300 drop-shadow-2xl">
                       {item.title}
                     </h2>
                     
                     {/* Animated underline */}
-                    <div className="w-0 h-1 bg-red-500 group-hover:w-32 transition-all duration-500 mb-4"></div>
+                    <div className="w-0 h-1 bg-red-500 group-hover:w-32 transition-all duration-2500 mb-4"></div>
                     
                     {/* Description */}
-                    <div className={`overflow-hidden transition-all duration-500 ${hoveredItem === item.id ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className={`overflow-hidden transition-all duration-2500 ${hoveredItem === item.id ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
                       <p className="text-white text-lg font-light tracking-wide drop-shadow-lg">
                         {item.description}
                       </p>
@@ -140,7 +140,7 @@ const LoneStarLanding: React.FC = () => {
             </div>
             
             {/* Subtle border effect */}
-            <div className="absolute inset-0 border-l-4 border-transparent group-hover:border-red-500 transition-all duration-300"></div>
+            <div className="absolute inset-0 border-l-4 border-transparent group-hover:border-red-500 transition-all duration-3500"></div>
           </div>
         ))}
       </div>
@@ -151,7 +151,7 @@ const LoneStarLanding: React.FC = () => {
           {[...Array(4)].map((_, i) => (
             <div
               key={i}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-2500 ${
                 hoveredItem ? 'bg-red-500' : 'bg-gray-400'
               }`}
               style={{
