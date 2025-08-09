@@ -7,7 +7,11 @@ interface MenuItem {
   description: string;
 }
 
-const LoneStarLanding: React.FC = () => {
+interface LoneStarLandingProps {
+  onNavigate?: (section: string) => void;
+}
+
+const LoneStarLanding: React.FC<LoneStarLandingProps> = ({ onNavigate }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const menuItems: MenuItem[] = [
@@ -38,8 +42,11 @@ const LoneStarLanding: React.FC = () => {
   ];
 
   const handleNavigate = (section: string) => {
-    console.log(`Navigating to: ${section}`);
-    // Add navigation logic here
+    if (onNavigate) {
+      onNavigate(section);
+    } else {
+      console.log(`Navigating to: ${section}`);
+    }
   };
 
   return (
@@ -109,7 +116,7 @@ const LoneStarLanding: React.FC = () => {
               <div className="w-full grid grid-cols-12 h-full">
                 {/* Title and Description Section - Takes 3 columns on the left */}
                 <div className="col-span-2 flex items-center"></div>
-                  <div className="col-span-7 flex items-center md:pl-10 md:ml-10">
+                  <div className="col-span-7 flex items-end md:pl-10 md:ml-10 pb-6">
                   <div className="text-left transform group-hover:scale-105 transition-all duration-2500">
                     <h2 className="text-2xl md:text-2xl font-bold text-white mb-4 tracking-wider transition-all duration-3000 drop-shadow-2xl">
                       {item.title}

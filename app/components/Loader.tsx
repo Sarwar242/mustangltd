@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
+import './loader.scss';
 interface LoaderProps {
   onComplete: () => void;
 }
@@ -23,8 +23,65 @@ export default function Loader({ onComplete }: LoaderProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-gray-900 flex items-center justify-center z-50 transition-opacity duration-500">
-      <div className="w-4 h-4 bg-red-500 transform rotate-45 animate-pulse"></div>
+
+    <div>
+
+      <h1 className="text-white text-4xl font-bold text-center mt-20 pt-10 top-auto">MUSTANG GROUP</h1>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+      <div className="hoverPad"></div>
+
+      <div className="towerOuter">
+        <div className="tower">
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+          <div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div><div className="card"></div>
+
+          <div className="shadow"></div>
+        </div>
+      </div>
     </div>
   );
 } 

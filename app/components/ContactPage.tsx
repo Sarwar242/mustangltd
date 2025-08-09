@@ -43,7 +43,7 @@ export default function ContactPage({ onBack }: ContactPageProps) {
   ];
 
   return (
-    <div className="min-h-screen flex">
+    <div className="h-screen flex overflow-hidden">
       {/* Left Section - Building Image with Overlay */}
       <div className="w-1/3 relative overflow-hidden">
         {/* Building facade gradient background */}
@@ -74,7 +74,7 @@ export default function ContactPage({ onBack }: ContactPageProps) {
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         
         {/* LONE STAR GROUP Text Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center pb-8">
           <div className="text-gray-300 text-4xl font-bold mb-8 tracking-wider" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
             LONE STAR GROUP
           </div>
@@ -93,9 +93,9 @@ export default function ContactPage({ onBack }: ContactPageProps) {
         {/* Close Button */}
         <button
           onClick={onBack}
-          className="absolute top-6 right-6 text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors"
+          className="absolute top-6 right-6 z-50 w-12 h-12 bg-gray-400 hover:bg-gray-600 text-white rounded-full flex items-center justify-center transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-xl"
         >
-          ×
+          <span className="text-3xl font-thin group-hover:rotate-90 transition-transform duration-300 leading-none">×</span>
         </button>
 
         {/* Contact Details Content */}

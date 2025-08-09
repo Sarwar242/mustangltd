@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.hoverPad {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 10%;
+
+    @for $y from 0 to 10 {
+        &:nth-child(#{$y + 3}) {
+            top: #{$y * 10%};
+
+            &:hover ~ .towerOuter {
+                --perspectivOriginY: #{$y * 5% + 15%};
+            }
+        }
+    }
+}
+
+// card vars:
+$towerRadius: 210;
+$cardWidth: 50;
+$cardHeight: 70;
+$ringHeight: 33;
+
+.towerOuter {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    perspective: 700px;
+    perspective-origin: center var(--perspectivOriginY);
+    transition: perspective-origin 0.25s;
+}
+
+.tower {
+    position: absolute;
+    top: 50%; left: 50%;;
+    width: $cardWidth + px;
+    transform-style: preserve-3d;
+    animation: towerRotate 60s infinite linear;
+
+    @keyframes towerRotate {
+        from { transform: translateX(-50%) rotateY(0deg); }
+        to { transform: translateX(-50%) rotateY(360deg); }
+    }
+}
+
+.card {
+    position: absolute;
+    width: $cardWidth + px;
+    height: $cardHeight + px;
+    background-image: url('/images/loader/cardsheet01.jpg');
+    background-size: #{$cardWidth * 13}px #{$cardHeight * 4}px;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 10px #0007 inset;
+    backface-visibility: hidden;
+
+    @for $r from 0 through 2 {
+        @for $i from 1 through 24 {
+            &:nth-child(#{$i + $r*72}) {
+                background-position: #{random(13) * $cardWidth}px #{random(4) * $cardHeight}px;
+                // transform: rotateY(#{($i - 1 + $r * 0.5) * 360 / 24}deg) translateX(#{$towerRadius}px) translateY(#{($r - 1.5) * ($ringHeight * 2)}px) rotateX(#{((random(2) - 1) * 180) - 20}deg);
+                transform: rotateY(#{($i - 1 + $r * 0.5) * 360 / 24}deg) translateX(#{$towerRadius}px) translateY(#{($r - 1.5) * ($ringHeight * 2)}px) rotateX(-20deg);
+            }
+            &:nth-child(#{$i + 24 + $r*72}) {
+                background-position: #{random(13) * $cardWidth}px #{random(4) * $cardHeight}px;
+                // transform: rotateY(#{($i - 24.5 + $r * 0.5) * 360 / 24}deg) translateX(#{$towerRadius}px) translateY(#{($r - 1.5) * ($ringHeight * 2)}px) rotateX(#{((random(2) - 1) * 180) + 20}deg);
+                transform: rotateY(#{($i - 24.5 + $r * 0.5) * 360 / 24}deg) translateX(#{$towerRadius}px) translateY(#{($r - 1.5) * ($ringHeight * 2)}px) rotateX(200deg);
+            }
+            &:nth-child(#{$i + 48 + $r*72}) {
+                background-position: #{random(13) * $cardWidth}px #{random(4) * $cardHeight}px;
+                // transform: rotateY(#{($i - 48.75 + $r * 0.5) * 360 / 24}deg) translateX(#{$towerRadius}px) translateY(#{($r - 2) * ($ringHeight * 2)}px) rotateX(#{((random(2) - 1) * 180) - 90}deg);
+                transform: rotateY(#{($i - 48.75 + $r * 0.5) * 360 / 24}deg) translateX(#{$towerRadius}px) translateY(#{($r - 2) * ($ringHeight * 2)}px) rotateX(-90deg);
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: $cardWidth + px;
+        height: $cardHeight + px;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        background-image: url('/images/loader/cardback01.jpg');
+        background-size: #{$cardWidth}px #{$cardHeight}px;
+        border: 1px solid #fff7;
+        border-radius: 8px;
+    }
+}
+
+.shadow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotateX(-90deg) translateZ(#{($ringHeight * 3) + 5}px);
+    width: #{$towerRadius * 3}px;
+    height: #{$towerRadius * 3}px;
+    background-image: radial-gradient(#0000, #000 #{$towerRadius}px, #0000 #{$towerRadius * 1.5}px);
+}
