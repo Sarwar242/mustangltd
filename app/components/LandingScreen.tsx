@@ -1,93 +1,169 @@
-'use client';
+import React, { useState } from 'react';
 
-import Image from 'next/image';
-import { useState } from 'react';
-
-interface LandingScreenProps {
-  onNavigate: (section: string) => void;
+interface MenuItem {
+  id: string;
+  title: string;
+  bgImage: string;
+  description: string;
 }
 
-export default function LandingScreen({ onNavigate }: LandingScreenProps) {
+const LoneStarLanding: React.FC = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     {
       id: 'about',
       title: 'ABOUT US',
-      background: '/images/menu/profile_btn.jpg',
+      bgImage: '/images/menu/profile_btn.jpg',
       description: 'Learn about our story and mission'
     },
     {
       id: 'what-we-do',
       title: 'WHAT WE DO',
-      background: '/images/menu/resume_btn.jpg',
+      bgImage: '/images/menu/portfolio_btn.jpg',
       description: 'Explore our services and capabilities'
     },
     {
       id: 'concerns',
       title: 'OUR CONCERNS',
-      background: '/images/menu/portfolio_btn.jpg',
+      bgImage: '/images/menu/resume_btn.jpg',
       description: 'Discover our business divisions'
     },
     {
       id: 'contact',
       title: 'CONTACT',
-      background: '/images/menu/contact_btn.jpg',
+      bgImage: '/images/menu/contact_btn.jpg',
       description: 'Get in touch with us'
     }
   ];
 
+  const handleNavigate = (section: string) => {
+    console.log(`Navigating to: ${section}`);
+    // Add navigation logic here
+  };
+
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen h-screen flex bg-gray-900">
       {/* Left Section - Logo */}
-      <div className="w-2/5 bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mr-4">
-              <div className="w-8 h-8 bg-red-500 transform rotate-45"></div>
-            </div>
-            <div className="text-left">
-              <h1 className="text-3xl font-bold text-gray-800">LONE STAR</h1>
-              <div className="w-full h-0.5 bg-gray-800 mt-1"></div>
-              <p className="text-sm text-gray-600 mt-1">GROUP</p>
+      <div className="w-1/2 bg-gradient-to-br from-gray-50 to-gray-200 flex items-center justify-center relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-gray-400 rounded-full"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 border border-gray-400 rounded-full"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-gray-400 rounded-full"></div>
+        </div>
+        
+        <div className="text-center z-10 transform hover:scale-105 transition-transform duration-500">
+          <div className="flex items-center justify-center mb-8">
+            {/* Logo Circle */}
+            {/* <div className="relative">
+              <div className="w-20 h-20 bg-gradient-to-br from-gray-600 to-gray-800 rounded-full flex items-center justify-center mr-6 shadow-2xl">
+                {/* Red Star */}
+                {/*<div className="relative">
+                  <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-600 transform rotate-45 rounded-sm shadow-lg"></div>
+                  <div className="absolute inset-0 w-10 h-10 bg-red-400 transform rotate-45 rounded-sm animate-pulse opacity-50"></div>
+                </div>
+              </div>
+            </div>*/}
+            
+            {/* Company Name */}
+            <div className="text-center">
+              <img src="/images/home_dp1.jpg" alt="" />
             </div>
           </div>
+          
+          {/* Tagline */}
+          {/* <div className="mt-8">
+            <p className="text-gray-500 text-sm font-light italic">
+              Excellence in Every Venture
+            </p>
+          </div> */}
         </div>
       </div>
 
       {/* Right Section - Menu Items */}
-      <div className="w-3/5 flex flex-col">
+      <div className="w-1/2 flex flex-col">
         {menuItems.map((item, index) => (
           <div
             key={item.id}
             className="flex-1 relative overflow-hidden cursor-pointer group"
             onMouseEnter={() => setHoveredItem(item.id)}
             onMouseLeave={() => setHoveredItem(null)}
-            onClick={() => onNavigate(item.id)}
+            onClick={() => handleNavigate(item.id)}
+            style={{ minHeight: '25vh' }}
           >
+            {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
-              style={{
-                backgroundImage: `url(${item.background})`,
-                filter: 'brightness(0.3)'
-              }}
+              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-1700 group-hover:scale-110 z-0"
+              style={{ backgroundImage: `url(${item.bgImage})` }}
             ></div>
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-white mb-2 transition-all duration-300 group-hover:text-red-400">
-                  {item.title}
-                </h2>
-                {hoveredItem === item.id && (
-                  <p className="text-white text-lg animate-fade-in">
-                    {item.description}
-                  </p>
-                )}
+            
+            {/* Overlay - Much lighter to show background image */}
+            <div className="absolute inset-0 bg-[#1a1b23] opacity-80 group-hover:opacity-60 transition-all duration-1500 z-10"></div>
+            
+            {/* Gradient Overlay - Lighter for better image visibility */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 group-hover:from-red-900/10 group-hover:to-blue-900/10 transition-all duration-1500 z-20"></div>
+            
+            {/* Content */}
+            <div className="absolute inset-0 flex items-center z-30">
+              <div className="w-full grid grid-cols-12 h-full">
+                {/* Title and Description Section - Takes 3 columns on the left */}
+                <div className="col-span-2 flex items-center"></div>
+                  <div className="col-span-7 flex items-center md:pl-10 md:ml-10">
+                  <div className="text-left transform group-hover:scale-105 transition-all duration-300">
+                    <h2 className="text-2xl md:text-2xl font-bold text-white mb-4 tracking-wider group-hover:text-red-400 transition-all duration-300 drop-shadow-2xl">
+                      {item.title}
+                    </h2>
+                    
+                    {/* Animated underline */}
+                    <div className="w-0 h-1 bg-red-500 group-hover:w-32 transition-all duration-500 mb-4"></div>
+                    
+                    {/* Description */}
+                    <div className={`overflow-hidden transition-all duration-500 ${hoveredItem === item.id ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <p className="text-white text-lg font-light tracking-wide drop-shadow-lg">
+                        {item.description}
+                      </p>
+                    </div>
+                    
+                    {/* Hover indicator */}
+                    {hoveredItem === item.id && (
+                      <div className="mt-4 animate-bounce">
+                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Empty space - Takes remaining 9 columns */}
+                <div className="col-span-2"></div>
               </div>
             </div>
+            
+            {/* Subtle border effect */}
+            <div className="absolute inset-0 border-l-4 border-transparent group-hover:border-red-500 transition-all duration-300"></div>
           </div>
         ))}
       </div>
+      
+      {/* Floating elements for visual interest */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <div className="flex space-x-2">
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                hoveredItem ? 'bg-red-500' : 'bg-gray-400'
+              }`}
+              style={{
+                animationDelay: `${i * 0.1}s`,
+                animation: hoveredItem ? 'pulse 1s infinite' : 'none'
+              }}
+            ></div>
+          ))}
+        </div>
+      </div>
     </div>
   );
-} 
+};
+
+export default LoneStarLanding;

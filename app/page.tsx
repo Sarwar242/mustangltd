@@ -17,7 +17,7 @@ export default function Home() {
     setIsLoading(false);
   };
 
-  const handleNavigate = (section: string) => {
+  const handleNavigate = (section: any) => {
     setActiveSection(section);
     setCurrentView('content');
     setShowTransition(true);
@@ -38,7 +38,7 @@ export default function Home() {
   if (currentView === 'landing') {
     return (
       <SlideTransition isVisible={true} direction="up" duration={500}>
-        <LandingScreen onNavigate={handleNavigate} />
+        <LandingScreen  />
       </SlideTransition>
     );
   }
