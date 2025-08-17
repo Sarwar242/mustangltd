@@ -75,7 +75,7 @@ const LoneStarLanding: React.FC<LoneStarLandingProps> = ({ onNavigate }) => {
             
             {/* Company Name */}
             <div className="text-center">
-              <img src="/images/home_dp1.jpg" alt="" />
+              <img src="/images/home_dp1.png" alt="" />
             </div>
           </div>
           

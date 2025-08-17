@@ -72,7 +72,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Infrastructure Development</h3>
                 <p>
-                  Lone Star Infrastructure owns, operates, and invests in infrastructure development 
+                  Mustang Group Infrastructure owns, operates, and invests in infrastructure development 
                   projects to generate superior risk-adjusted investment returns.
                 </p>
               </div>
@@ -80,9 +80,9 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Energy & Hospitality</h3>
                 <p>
-                  Lone Star Hospitality works with the biggest hotel chains and it is growing sustainably. 
-                  Lone Star Energy is active in the whole energy value chain including electricity generation 
-                  and distribution. Under its strategic targets, Lone Star Energy continues to develop new 
+                  Mustang Group Hospitality works with the biggest hotel chains and it is growing sustainably. 
+                  Mustang Group Energy is active in the whole energy value chain including electricity generation 
+                  and distribution. Under its strategic targets, Mustang Group Energy continues to develop new 
                   projects in order to meet Bangladesh's energy demand.
                 </p>
               </div>
@@ -90,7 +90,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Global Reach</h3>
                 <p>
-                  Lone Star International provides trade services to various international and local clients, 
+                  Mustang Group International provides trade services to various international and local clients, 
                   working in all the sectors it exists with its experienced and trained manpower within the 
                   principle of maximum productivity and effectiveness and occupying a prominent place among 
                   the leading companies.

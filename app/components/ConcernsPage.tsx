@@ -21,31 +21,31 @@ export default function ConcernsPage({ onBack }: ConcernsPageProps) {
       sector: 'Defense & Security'
     },
     {
-      title: 'Lone Star Infrastructure',
+      title: 'Mustang Group Infrastructure',
       description: 'Focused on infrastructure development, real estate projects, and construction management across Bangladesh.',
       established: '1995',
       sector: 'Infrastructure'
     },
     {
-      title: 'Lone Star Energy',
+      title: 'Mustang Group Energy',
       description: 'Operating in the complete energy value chain including power generation, distribution, and renewable energy projects.',
       established: '2000',
       sector: 'Energy'
     },
     {
-      title: 'Lone Star Hospitality',
+      title: 'Mustang Group Hospitality',
       description: 'Managing premium hospitality services and partnerships with international hotel chains.',
       established: '2005',
       sector: 'Hospitality'
     },
     {
-      title: 'Lone Star International',
+      title: 'Mustang Group International',
       description: 'Facilitating international trade, import-export operations, and global business partnerships.',
       established: '2008',
       sector: 'International Trade'
     },
     {
-      title: 'Lone Star Technologies',
+      title: 'Mustang Group Technologies',
       description: 'Providing cutting-edge IT solutions, digital transformation services, and technology consulting.',
       established: '2015',
       sector: 'Information Technology'

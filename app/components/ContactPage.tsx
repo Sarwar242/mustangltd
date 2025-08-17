@@ -18,27 +18,27 @@ export default function ContactPage({ onBack }: ContactPageProps) {
     {
       icon: '📍',
       label: 'Address',
-      value: 'A3, House 646, Mirpur DOHS, Dhaka-1216, Bangladesh.'
+      value: 'A3, House 646, Mirpur , Dhaka-1216, Bangladesh.'
     },
     {
       icon: '📞',
       label: 'Phone',
-      value: '+880 2 5807 0221'
+      value: '+60 18-209 5258'
     },
     {
       icon: '📠',
       label: 'Fax',
-      value: '+880 2 5807 0249'
+      value: '+60 18-209 5258'
     },
     {
       icon: '✉️',
       label: 'Email',
-      value: 'info@lonestargroup.xyz'
+      value: 'info@mustanggroup.io'
     },
     {
       icon: '🌐',
       label: 'Website',
-      value: 'www.lonestargroup.xyz'
+      value: 'www.mustanggroup.io'
     }
   ];
 
