@@ -54,7 +54,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               <div className="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Foundation</h3>
                 <p>
-                  Established in 1985 with Muhsin & Co., Lone Star Group has added Defense Purchase, 
+                  Established in 1985 with Muhsin & Co., MUSTANG GROUP has added Defense Purchase, 
                   Energy, Infrastructure, Hospitality Management, International Trade and Information 
                   Technology sectors to its operations by growing sustainably over time.
                 </p>

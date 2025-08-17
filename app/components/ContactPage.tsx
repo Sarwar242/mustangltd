@@ -73,10 +73,10 @@ export default function ContactPage({ onBack }: ContactPageProps) {
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         
-        {/* LONE STAR GROUP Text Overlay */}
+        {/* MUSTANG GROUP Text Overlay */}
         <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center pb-8">
           <div className="text-gray-300 text-4xl font-bold mb-8 tracking-wider" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-            LONE STAR GROUP
+            MUSTANG GROUP
           </div>
           <div className="text-center">
             <div className="text-6xl font-bold">

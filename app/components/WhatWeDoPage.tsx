@@ -54,7 +54,7 @@ export default function WhatWeDoPage({ onBack }: WhatWeDoPageProps) {
         
         <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center px-8 pb-8">
           <div className="text-gray-300 text-3xl font-bold mb-8 tracking-wider">
-            LONE STAR GROUP
+            MUSTANG GROUP
           </div>
           <div className="text-center">
             <div className="text-5xl font-bold">
@@ -100,7 +100,7 @@ export default function WhatWeDoPage({ onBack }: WhatWeDoPageProps) {
 
             <div className="mt-12 text-center">
               <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Since 1985, Lone Star Group has evolved from Muhsin & Co. to become a diversified 
+                Since 1985, MUSTANG GROUP has evolved from Muhsin & Co. to become a diversified 
                 conglomerate operating across multiple sectors. Our commitment to excellence and 
                 sustainable growth drives us to deliver superior value to our clients and stakeholders.
               </p>

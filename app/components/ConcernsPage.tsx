@@ -60,7 +60,7 @@ export default function ConcernsPage({ onBack }: ConcernsPageProps) {
         
         <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center px-8 pb-8">
           <div className="text-gray-300 text-3xl font-bold mb-8 tracking-wider">
-            LONE STAR GROUP
+            MUSTANG GROUP
           </div>
           <div className="text-center">
             <div className="text-5xl font-bold">
