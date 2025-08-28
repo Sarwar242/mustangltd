@@ -15,34 +15,34 @@ export default function WhatWeDoPage({ onBack }: WhatWeDoPageProps) {
 
   const services = [
     {
-      title: 'Defense & Security',
-      description: 'Providing comprehensive defense solutions and security services to military and government sectors.',
+      title: 'Defense Supply',
+      description: 'Supply of arms & ammunition to Bangladesh Armed Forces, with DGDP license and proven track record of successful deliveries.',
       icon: '🛡️'
     },
     {
-      title: 'Energy Solutions',
-      description: 'Active in the energy value chain including electricity generation and distribution projects.',
+      title: 'Power & Energy',
+      description: 'Comprehensive power solutions including HFO-based power plants, Solar Power, Wind Power, and LNG+FSRU+Gas Based Power Plants.',
       icon: '⚡'
     },
     {
-      title: 'Infrastructure Development',
-      description: 'Owning, operating, and investing in infrastructure development projects for superior returns.',
+      title: 'Infrastructure & Development',
+      description: 'Land development, commercial complexes, and major infrastructure projects including 5-Star Hotels and Sports Complexes.',
       icon: '🏗️'
     },
     {
-      title: 'Hospitality Management',
-      description: 'Working with major hotel chains and sustainable hospitality growth initiatives.',
-      icon: '🏨'
+      title: 'Education',
+      description: 'Established educational institutions including The World University Regional Campus, with international collaborations.',
+      icon: '�'
     },
     {
-      title: 'International Trade',
-      description: 'Providing trade services to international and local clients across all business sectors.',
-      icon: '🌍'
+      title: 'Chemical Industry',
+      description: 'International supply of industrial chemicals, ceramic chemicals, and sanitary ware factory chemicals.',
+      icon: '🧪'
     },
     {
-      title: 'Information Technology',
-      description: 'Advanced IT solutions and digital transformation services for modern business needs.',
-      icon: '💻'
+      title: 'Manufacturing & Trade',
+      description: 'Diverse projects including Bus Manufacturing, Ship Recycling, and international trade partnerships.',
+      icon: '🏭'
     }
   ];
 

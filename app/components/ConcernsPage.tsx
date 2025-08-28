@@ -15,40 +15,40 @@ export default function ConcernsPage({ onBack }: ConcernsPageProps) {
 
   const concerns = [
     {
-      title: 'Muhsin & Co. Ltd.',
-      description: 'Our flagship defense contracting company, established in 1985, specializing in defense procurement and military equipment supply.',
-      established: '1985',
-      sector: 'Defense & Security'
+      title: 'Defense Division',
+      description: 'DGDP licensed supplier of arms & ammunition to Bangladesh Army, Navy, and Air Force since 1994, with successful delivery track record.',
+      established: '1994',
+      sector: 'Defense Supply'
     },
     {
-      title: 'Mustang Group Infrastructure',
-      description: 'Focused on infrastructure development, real estate projects, and construction management across Bangladesh.',
-      established: '1995',
-      sector: 'Infrastructure'
-    },
-    {
-      title: 'Mustang Group Energy',
-      description: 'Operating in the complete energy value chain including power generation, distribution, and renewable energy projects.',
-      established: '2000',
+      title: 'Power Generation',
+      description: 'Operating multiple power plants including 108 MW HFO-based plant, developing renewable energy projects in solar and wind power.',
+      established: '1994',
       sector: 'Energy'
     },
     {
-      title: 'Mustang Group Hospitality',
-      description: 'Managing premium hospitality services and partnerships with international hotel chains.',
-      established: '2005',
-      sector: 'Hospitality'
+      title: 'Infrastructure Development',
+      description: 'Executing major infrastructure projects including commercial complexes, hotels, and sports facilities.',
+      established: '1998',
+      sector: 'Infrastructure'
     },
     {
-      title: 'Mustang Group International',
-      description: 'Facilitating international trade, import-export operations, and global business partnerships.',
-      established: '2008',
-      sector: 'International Trade'
+      title: 'Education & Training',
+      description: 'Operating The World University Regional Campus with international collaborations for quality education.',
+      established: '2003',
+      sector: 'Education'
     },
     {
-      title: 'Mustang Group Technologies',
-      description: 'Providing cutting-edge IT solutions, digital transformation services, and technology consulting.',
+      title: 'Chemical Supply Division',
+      description: 'International supplier of industrial chemicals, ceramic chemicals, and specialized factory chemicals.',
+      established: '2010',
+      sector: 'Chemical Industry'
+    },
+    {
+      title: 'Manufacturing & Trade',
+      description: 'Diverse portfolio including bus manufacturing, ship recycling, and international trade partnerships with major global companies.',
       established: '2015',
-      sector: 'Information Technology'
+      sector: 'Manufacturing'
     }
   ];
 
