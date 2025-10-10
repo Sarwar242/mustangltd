@@ -18,72 +18,50 @@ export default function ConcernsPage({ onBack }: ConcernsPageProps) {
       title: 'Defense Division',
       description: 'DGDP licensed supplier of arms & ammunition to Bangladesh Army, Navy, and Air Force since 1994, with successful delivery track record.',
       established: '1994',
-      sector: 'Defense Supply'
+      sector: 'Defense Supply',
+      subdomain: 'defense.mustanggroup.io'
     },
     {
       title: 'Power Generation',
       description: 'Operating multiple power plants including 108 MW HFO-based plant, developing renewable energy projects in solar and wind power.',
       established: '1994',
-      sector: 'Energy'
+      sector: 'Energy',
+      subdomain: 'power.mustanggroup.io'
     },
     {
       title: 'Infrastructure Development',
       description: 'Executing major infrastructure projects including commercial complexes, hotels, and sports facilities.',
       established: '1998',
-      sector: 'Infrastructure'
+      sector: 'Infrastructure',
+      subdomain: 'infrastructure.mustanggroup.io'
     },
     {
       title: 'Education & Training',
       description: 'Operating The World University Regional Campus with international collaborations for quality education.',
       established: '2003',
-      sector: 'Education'
+      sector: 'Education',
+      subdomain: 'education.mustanggroup.io'
     },
     {
       title: 'Chemical Supply Division',
       description: 'International supplier of industrial chemicals, ceramic chemicals, and specialized factory chemicals.',
       established: '2010',
-      sector: 'Chemical Industry'
+      sector: 'Chemical Industry',
+      subdomain: 'chemical.mustanggroup.io'
     },
     {
       title: 'Manufacturing & Trade',
       description: 'Diverse portfolio including bus manufacturing, ship recycling, and international trade partnerships with major global companies.',
       established: '2015',
-      sector: 'Manufacturing'
+      sector: 'Manufacturing',
+      subdomain: 'manufacture.mustanggroup.io'
     }
   ];
 
   return (
-    <div className="h-screen flex bg-gray-100 overflow-hidden">
-      {/* Left Section - Title */}
-      <div className="w-1/3 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        
-        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center px-8 pb-8">
-          <div className="text-gray-300 text-3xl font-bold mb-8 tracking-wider">
-            MUSTANG GROUP
-          </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold">
-              <span className="text-white">OUR</span>
-              <span className="text-red-500"> CONCERNS</span>
-            </div>
-            <div className="w-full h-0.5 bg-red-500 mt-2"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Right Section - Business Divisions */}
-      <div className="w-2/3 bg-white relative">
-        {/* Close Button */}
-        <button
-          onClick={onBack}
-          className="absolute top-6 right-6 z-50 w-12 h-12 bg-gray-400 hover:bg-gray-600 text-white rounded-full flex items-center justify-center transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-xl"
-        >
-          <span className="text-3xl font-thin group-hover:rotate-90 transition-transform duration-300 leading-none">×</span>
-        </button>
-
-        {/* Content */}
-        <div className="p-12 h-full overflow-y-auto">
+    <div className="min-h-screen bg-white">
+      {/* Content */}
+      <div className="p-12">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">
               Our Business Divisions
@@ -109,7 +87,24 @@ export default function ConcernsPage({ onBack }: ConcernsPageProps) {
                     </span>
                   </div>
                   
-                  <p className="text-gray-600 leading-relaxed">{concern.description}</p>
+                  <p className="text-gray-600 leading-relaxed mb-6">{concern.description}</p>
+                  
+                  <div className="flex justify-end">
+                    <button
+                      onClick={() => window.open(`https://${concern.subdomain}`, '_blank')}
+                      className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 cursor-pointer rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center gap-2"
+                    >
+                      <span>Visit Site</span>
+                      <svg 
+                        className="w-4 h-4" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -124,7 +119,6 @@ export default function ConcernsPage({ onBack }: ConcernsPageProps) {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 } 

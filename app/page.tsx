@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from "next/image";
 import Loader from './components/Loader';
-import LandingScreen from './components/LandingScreen';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
+import HomePage from './components/HomePage';
 import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
 import WhatWeDoPage from './components/WhatWeDoPage';
@@ -13,7 +15,6 @@ import Curtain from './components/Curtain';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [currentView, setCurrentView] = useState<'landing' | 'content'>('landing');
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [showTransition, setShowTransition] = useState(false);
 
@@ -23,9 +24,7 @@ export default function Home() {
   const curtainDuration = 1500;
 
   const handleLoaderComplete = () => {
-    // Mount landing immediately, then play only the reveal (open) effect
     setIsLoading(false);
-    setCurrentView('landing');
     setActiveSection(null);
 
     // Force curtains to closed for a single frame, then open for full duration
@@ -47,7 +46,6 @@ export default function Home() {
     const switchDelay = Math.floor(curtainDuration * 0.6);
     window.setTimeout(() => {
       setActiveSection(section);
-      setCurrentView('content');
       setShowTransition(true);
       // Open to reveal target content
       setCurtainPhase('open');
@@ -56,14 +54,13 @@ export default function Home() {
     }, switchDelay);
   };
 
-  // Close button: close curtain, then switch to landing and open
-  const handleBackToLanding = () => {
+  // Navigation back to home
+  const handleBackToHome = () => {
     setCurtainActive(true);
     setCurtainPhase('close');
     const switchDelay = Math.floor(curtainDuration * 0.6);
     window.setTimeout(() => {
       setShowTransition(false);
-      setCurrentView('landing');
       setActiveSection(null);
       setCurtainPhase('open');
       window.setTimeout(() => setCurtainActive(false), curtainDuration * 2);
@@ -84,69 +81,33 @@ export default function Home() {
     />
   );
 
-  if (currentView === 'landing') {
-    return (
-      <>
-        <SlideTransition isVisible={true} direction="left" duration={1}>
-          <LandingScreen onNavigate={handleNavigate} />
-        </SlideTransition>
-        {CurtainOverlay}
-      </>
-    );
-  }
-
-  // Handle different page sections
-  if (activeSection === 'contact') {
-    return (
-      <>
-        <SlideTransition isVisible={showTransition} direction="left" duration={1}>
-          <ContactPage onBack={handleBackToLanding} />
-        </SlideTransition>
-        {CurtainOverlay}
-      </>
-    );
-  }
-
-  if (activeSection === 'about') {
-    return (
-      <>
-        <SlideTransition isVisible={showTransition} direction="left" duration={1}>
-          <AboutPage onBack={handleBackToLanding} />
-        </SlideTransition>
-        {CurtainOverlay}
-      </>
-    );
-  }
-
-  if (activeSection === 'what-we-do') {
-    return (
-      <>
-        <SlideTransition isVisible={showTransition} direction="left" duration={1}>
-          <WhatWeDoPage onBack={handleBackToLanding} />
-        </SlideTransition>
-        {CurtainOverlay}
-      </>
-    );
-  }
-
-  if (activeSection === 'concerns') {
-    return (
-      <>
-        <SlideTransition isVisible={showTransition} direction="left" duration={1}>
-          <ConcernsPage onBack={handleBackToLanding} />
-        </SlideTransition>
-        {CurtainOverlay}
-      </>
-    );
-  }
+  // Render content based on active section
+  const renderMainContent = () => {
+    if (activeSection === 'about') {
+      return <AboutPage onBack={handleBackToHome} />;
+    }
+    if (activeSection === 'what-we-do') {
+      return <WhatWeDoPage onBack={handleBackToHome} />;
+    }
+    if (activeSection === 'concerns') {
+      return <ConcernsPage onBack={handleBackToHome} />;
+    }
+    if (activeSection === 'contact') {
+      return <ContactPage onBack={handleBackToHome} />;
+    }
+    // Default home page
+    return <HomePage />;
+  };
 
   return (
     <>
-      <SlideTransition isVisible={showTransition} direction="right" duration={500}>
-        <div className="min-h-screen bg-gray-900 text-white">
-          {/* Fallback content (legacy) */}
-        </div>
-      </SlideTransition>
+      <Navbar />
+      <Sidebar onNavigate={handleNavigate} activeSection={activeSection} />
+      <MainContent>
+        <SlideTransition isVisible={true} direction="left" duration={1}>
+          {renderMainContent()}
+        </SlideTransition>
+      </MainContent>
       {CurtainOverlay}
     </>
   );

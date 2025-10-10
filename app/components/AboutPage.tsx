@@ -14,37 +14,9 @@ export default function AboutPage({ onBack }: AboutPageProps) {
   }, []);
 
   return (
-    <div className="h-screen flex bg-gray-100 overflow-hidden">
-      {/* Left Section - Title */}
-      <div className="w-1/3 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
-        
-        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center text-center px-8 pb-8">
-          <div className="text-gray-300 text-3xl font-bold mb-8 tracking-wider">
-            MUSTANG GROUP
-          </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold">
-              <span className="text-white">ABOUT</span>
-              <span className="text-red-500"> US</span>
-            </div>
-            <div className="w-full h-0.5 bg-red-500 mt-2"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Right Section - About Content */}
-      <div className="w-2/3 bg-white relative">
-        {/* Close Button */}
-        <button
-          onClick={onBack}
-          className="absolute top-6 right-6 z-50 w-12 h-12 bg-gray-400 hover:bg-gray-600 text-white rounded-full flex items-center justify-center transition-all duration-300 group cursor-pointer shadow-lg hover:shadow-xl"
-        >
-          <span className="text-3xl font-thin group-hover:rotate-90 transition-transform duration-300 leading-none">×</span>
-        </button>
-
-        {/* Content */}
-        <div className="p-12 h-full overflow-y-auto">
+    <div className="min-h-screen bg-white">
+      {/* Content */}
+      <div className="p-12">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">
               Chairman's Profile
@@ -108,7 +80,6 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 } 
