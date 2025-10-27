@@ -17,6 +17,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [showTransition, setShowTransition] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   // New curtain state
   const [curtainActive, setCurtainActive] = useState(false);
@@ -102,8 +103,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Sidebar onNavigate={handleNavigate} activeSection={activeSection} />
-      <MainContent>
+      <Sidebar 
+        onNavigate={handleNavigate} 
+        activeSection={activeSection}
+        onToggle={setSidebarCollapsed}
+        isCollapsed={sidebarCollapsed}
+      />
+      <MainContent sidebarCollapsed={sidebarCollapsed}>
         <SlideTransition isVisible={true} direction="left" duration={1}>
           {renderMainContent()}
         </SlideTransition>
