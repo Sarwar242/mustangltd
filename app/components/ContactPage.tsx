@@ -45,8 +45,8 @@ export default function ContactPage({ onBack }: ContactPageProps) {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Contact Details Content */}
-      <div className="flex flex-col justify-center min-h-screen px-12">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+      <div className="flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8 md:mb-12">
             CONTACT DETAILS
           </h2>
           
